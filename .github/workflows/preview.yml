@@ -2,8 +2,10 @@ name: DNSControl - Validate & Preview
 
 on:
   pull_request:
-    branches: ['master']
-  workflow_dispatch:
+    types:
+      - opened
+    branches:
+      - main
 
 jobs:
   validate:
