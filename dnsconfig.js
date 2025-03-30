@@ -11,8 +11,7 @@ D("jacobhobbie.com", REG_PORKBUN,
     MX("@", 10, "in1-smtp.messagingengine.com."),
     MX("@", 20, "in1-smtp.messagingengine.com."),
     TXT("@", "v=spf1 include:spf.messagingengine.com ?all"),
-    TXT("pronouns", "he/him"),
-    TXT("state", "Kansas")
+    TXT("pronouns", "he/him")
 );
 
 D("hobbie.dev", REG_PORKBUN,
