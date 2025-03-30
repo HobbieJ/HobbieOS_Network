@@ -16,12 +16,13 @@ jobs:
         uses: gacts/install-dnscontrol@v1
 
       - name: Print Current Version of DNSControl
-        run: echo dnscontrol version >> $GITHUB_STEP_SUMMARY
+        run: echo $(dnscontrol version) >> $GITHUB_STEP_SUMMARY
 
       - name: Check DNSControl Config
         run: dnscontrol check
 
   preview:
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -29,9 +30,6 @@ jobs:
 
       - name: Install DNSControl
         uses: gacts/install-dnscontrol@v1
-
-      - name: Print Current Version of DNSControl
-        run: echo dnscontrol version >> $GITHUB_STEP_SUMMARY
 
       - name: Preview DNSControl Changes
         env:
