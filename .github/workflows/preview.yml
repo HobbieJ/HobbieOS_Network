@@ -1,0 +1,42 @@
+name: DNSControl - Validate & Preview
+
+on:
+  pull_request:
+    branches: ['master']
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install DNSControl
+        uses: gacts/install-dnscontrol@v1
+
+      - name: Print Current Version of DNSControl
+        run: echo dnscontrol version >> $GITHUB_STEP_SUMMARY
+
+      - name: Check DNSControl Config
+        run: dnscontrol check
+
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install DNSControl
+        uses: gacts/install-dnscontrol@v1
+
+      - name: Print Current Version of DNSControl
+        run: echo dnscontrol version >> $GITHUB_STEP_SUMMARY
+
+      - name: Preview DNSControl Changes
+        env:
+          PORKBUN_API_KEY: ${{ secrets.PORKBUN_API_KEY }}
+          PORKBUN_SECRET_KEY: ${{ secrets.PORKBUN_SECRET_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ CLOUDFLARE_API_TOKEN }}
+        run: dnscontrol preview
