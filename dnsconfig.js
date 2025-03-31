@@ -5,6 +5,7 @@ var DNS_CLOUDFLARE = NewDnsProvider("cloudflare");
 
 D("jacobhobbie.com", REG_NONE,
     DnsProvider(DNS_CLOUDFLARE),
+    DefaultTTL("1"),
     CNAME("www", "jacobhobbie.com.", CF_PROXY_ON),
     CNAME("fm1._domainkey", "fm1.jacobhobbie.com.dkim.fmhosted.com."),
     CNAME("fm2._domainkey", "fm2.jacobhobbie.com.dkim.fmhosted.com."),
