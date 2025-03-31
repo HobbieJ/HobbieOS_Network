@@ -13,7 +13,6 @@
         "TYPE": "NONE"
     },
     "notifications": {
-        "discord_url": "https://discord.com/api/webhooks/$DISCORD_WEBHOOK_ID/$DISCORD_WEBHOOK_TOKEN",
-        "shoutrrr_url": "discover://$DISCORD_WEBHOOK_TOKEN@$DISCORD_WEBHOOK_ID"
+        "shoutrrr_url": "discord://$DISCORD_WEBHOOK_TOKEN@$DISCORD_WEBHOOK_ID"
     }
 }
