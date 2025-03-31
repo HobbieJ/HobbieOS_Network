@@ -1,8 +1,9 @@
 var REG_PORKBUN = NewRegistrar("porkbun");
+var REG_NONE = NewRegistrar("none");
 var DNS_PORKBUN = NewDnsProvider("porkbun");
 var DNS_CLOUDFLARE = NewDnsProvider("cloudflare");
 
-D("jacobhobbie.com", REG_PORKBUN,
+D("jacobhobbie.com", REG_NONE,
     DnsProvider(DNS_CLOUDFLARE),
     CNAME("www", "jacobhobbie.com.", CF_PROXY_ON),
     CNAME("fm1._domainkey", "fm1.jacobhobbie.com.dkim.fmhosted.com."),
@@ -14,23 +15,23 @@ D("jacobhobbie.com", REG_PORKBUN,
     TXT("pronouns", "he/him")
 );
 
-D("hobbie.dev", REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE)
-);
+// D("hobbie.dev", REG_PORKBUN,
+//     DnsProvider(DNS_CLOUDFLARE)
+// );
 
-D("hobbie.family", REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE)
-);
+// D("hobbie.family", REG_PORKBUN,
+//     DnsProvider(DNS_CLOUDFLARE)
+// );
 
-// For Uncle Warren
-D("thehobbieshop.com", REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE)
-);
+// // For Uncle Warren
+// D("thehobbieshop.com", REG_PORKBUN,
+//     DnsProvider(DNS_CLOUDFLARE)
+// );
 
-D("hobbieforhouse.org", REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE)
-);
+// D("hobbieforhouse.org", REG_PORKBUN,
+//     DnsProvider(DNS_CLOUDFLARE)
+// );
 
-D("vortexmanipulators.com", REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE)
-);
+// D("vortexmanipulators.com", REG_PORKBUN,
+//     DnsProvider(DNS_CLOUDFLARE)
+// );
