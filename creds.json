@@ -9,6 +9,9 @@
         "accountid": "$CLOUDFLARE_ACCOUNT_ID",
         "apitoken": "$CLOUDFLARE_API_TOKEN"
     },
+    "none": {
+        "TYPE": "NONE"
+    },
     "notifications": {
         "discord_url": "https://discord.com/api/webhooks/$DISCORD_WEBHOOK_ID/$DISCORD_WEBHOOK_TOKEN",
         "shoutrrr_url": "discover://$DISCORD_WEBHOOK_TOKEN@$DISCORD_WEBHOOK_ID"
