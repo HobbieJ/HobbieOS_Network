@@ -34,4 +34,6 @@ jobs:
           PORKBUN_SECRET_KEY: ${{ secrets.PORKBUN_SECRET_KEY }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: dnscontrol preview
+          DISCORD_WEBHOOK_TOKEN: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          DISCORD_WEBHOOK_ID: ${{ secrets.DISCORD_WEBHOOK_ID }}
+        run: dnscontrol preview --notify
