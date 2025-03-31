@@ -13,6 +13,6 @@
         "TYPE": "NONE"
     },
     "notifications": {
-        "shoutrrr_url": "discord://$DISCORD_WEBHOOK_TOKEN@$DISCORD_WEBHOOK_ID"
+        "shoutrrr_url": "$DISCORD_WEBHOOK"
     }
 }
