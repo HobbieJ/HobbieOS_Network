@@ -6,7 +6,7 @@ var REG_NONE = NewRegistrar("none");
 var DNS_PORKBUN = NewDnsProvider("porkbun");
 var DNS_CLOUDFLARE = NewDnsProvider("cloudflare");
 
-D("jacobhobbie.com", REG_PORKBUN,
+D("jacobhobbie.com", REG_NONE,
     DnsProvider(DNS_CLOUDFLARE),
     DefaultTTL("1"),
     CNAME("www", "jacobhobbie.com.", CF_PROXY_ON),
@@ -23,8 +23,8 @@ D("hobbie.dev", REG_PORKBUN);
 
 D("hobbie.family", REG_PORKBUN);
 
-D("thehobbieshop.com", REG_PORKBUN);
+// D("thehobbieshop.com", REG_PORKBUN);
 
 D("hobbieforhouse.org", REG_PORKBUN);
 
-D("vortexmanipulators.com", REG_PORKBUN);
+// D("vortexmanipulators.com", REG_PORKBUN);
