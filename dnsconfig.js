@@ -19,23 +19,12 @@ D("jacobhobbie.com", REG_NONE,
     TXT("pronouns", "\"he/him\"")
 );
 
-// D("hobbie.dev", REG_PORKBUN,
-//     DnsProvider(DNS_CLOUDFLARE)
-// );
+D("hobbie.dev", REG_PORKBUN);
 
-// D("hobbie.family", REG_PORKBUN,
-//     DnsProvider(DNS_CLOUDFLARE)
-// );
+D("hobbie.family", REG_PORKBUN);
 
-// // For Uncle Warren
-// D("thehobbieshop.com", REG_PORKBUN,
-//     DnsProvider(DNS_CLOUDFLARE)
-// );
+// D("thehobbieshop.com", REG_PORKBUN);
 
-// D("hobbieforhouse.org", REG_PORKBUN,
-//     DnsProvider(DNS_CLOUDFLARE)
-// );
+D("hobbieforhouse.org", REG_PORKBUN);
 
-// D("vortexmanipulators.com", REG_PORKBUN,
-//     DnsProvider(DNS_CLOUDFLARE)
-// );
+// D("vortexmanipulators.com", REG_PORKBUN);
