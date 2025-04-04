@@ -55,7 +55,7 @@ jobs:
           dnscontrol preview | awk '/Domain: / {sub(/^.*Domain: /, ""); print} /^#[0-9]+: / {sub(/^#[0-9]+: /, ""); gsub(/\x1B\[[0-9;]*[mK]/, ""); print}' > ${{ runner.temp }}/preview_output.txt
           printf "| Domain: | Changes: |\n| --- | ---" > ${{ runner.temp }}/comment.md
           (cat ${{ runner.temp }}/preview_output.txt | while read line; do if [[ "${line:0:1}" == "+" || "${line:0:1}" == "-" ]]; then printf -- "$line<br/>"; else printf -- " |\n| $line | "; fi; done; printf " |") >> ${{ runner.temp }}/comment.md
-          echo "comment=\"$(cat ${{ runner.temp }}/comment.md | sed ':a;N;$!ba;s/\n/\\n/g')\"" >> $GITHUB_OUTPUT
+          echo "comment='$(cat ${{ runner.temp }}/comment.md | sed ':a;N;$!ba;s/\n/\\n/g')'" >> $GITHUB_OUTPUT
 
       - name: Comment on PR on GitHub
         uses: actions/github-script@v3
