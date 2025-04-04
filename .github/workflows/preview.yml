@@ -6,12 +6,14 @@ on:
       - opened
       - synchronize
       - reopened
+      - labeled
+      - unlabeled
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   validate:
+    if: contains(github.event.pull_request.labels.*.name, 'DNS Update')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -24,6 +26,9 @@ jobs:
         run: dnscontrol check
 
   preview:
+    if: contains(github.event.pull_request.labels.*.name, 'DNS Update')
+    permissions:
+      pull-requests: write
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -43,5 +48,30 @@ jobs:
         # TODO: Fork DNSControl & Fix Preview Notifications
         run: dnscontrol preview --notify
 
-        # TODO: Add Preview to Pull Request
+      - name: Create PR Comment
+        id: create-comment
+        env:
+          PORKBUN_API_KEY: ${{ secrets.PORKBUN_API_KEY }}
+          PORKBUN_SECRET_KEY: ${{ secrets.PORKBUN_SECRET_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          dnscontrol preview | awk '/Domain: / {sub(/^.*Domain: /, ""); print} /^#[0-9]+: / {sub(/^#[0-9]+: /, ""); gsub(/\x1B\[[0-9;]*[mK]/, ""); print}' > ${{ runner.temp }}/preview_output.txt
+          printf "| Domain: | Changes: |\n| --- | ---" > ${{ runner.temp }}/comment.md
+          (cat ${{ runner.temp }}/preview_output.txt | while read line; do if [[ "${line:0:1}" == "+" || "${line:0:1}" == "-" ]]; then printf -- "$line<br/>"; else printf -- " |\n| $line | "; fi; done; printf " |") >> ${{ runner.temp }}/comment.md
+          echo "comment='$(cat ${{ runner.temp }}/comment.md | sed ':a;N;$!ba;s/\n/\\n/g')'" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR on GitHub
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ${{ steps.create-comment.outputs.comment }}
+            })
+
         
