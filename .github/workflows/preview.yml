@@ -6,12 +6,14 @@ on:
       - opened
       - synchronize
       - reopened
+      - labeled
     branches:
       - main
   workflow_dispatch:
 
 jobs:
   validate:
+    if: ${{ github.event.label.name == 'DNS/NS'} }
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -24,6 +26,7 @@ jobs:
         run: dnscontrol check
 
   preview:
+    if: ${{ github.event.label.name == 'DNS/NS'} }
     permissions:
       pull-requests: write
     needs: validate
