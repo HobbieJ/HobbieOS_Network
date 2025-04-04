@@ -7,13 +7,14 @@ on:
       - synchronize
       - reopened
       - labeled
+      - unlabeled
     branches:
       - main
   workflow_dispatch:
 
 jobs:
   validate:
-    if: ${{ github.event.label.name == 'DNS Update'} }
+    if: contains(github.event.pull_request.labels.*.name, 'DNS Update')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -26,7 +27,7 @@ jobs:
         run: dnscontrol check
 
   preview:
-    if: ${{ github.event.label.name == 'DNS Update'} }
+    if: contains(github.event.pull_request.labels.*.name, 'DNS Update')
     permissions:
       pull-requests: write
     needs: validate
