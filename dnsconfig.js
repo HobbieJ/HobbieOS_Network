@@ -22,7 +22,7 @@ D("jacobhobbie.com", REG_PORKBUN,
     // Bluesky Settings
     TXT("_atproto", "\"did=did:plc:ctqbmzjkhqkhpftpm6ajt5hx\""),
     // Extras
-    TXT("pronouns", "\"he/him\"")
+    TXT("test", "\"test\"")
 );
 
 D("hobbie.dev", REG_PORKBUN,
