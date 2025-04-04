@@ -24,6 +24,7 @@ jobs:
         run: dnscontrol check
 
   preview:
+    permissions: write-all
     needs: validate
     runs-on: ubuntu-latest
     steps:
