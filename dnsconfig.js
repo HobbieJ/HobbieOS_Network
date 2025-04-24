@@ -21,6 +21,7 @@ D("jacobhobbie.com", REG_PORKBUN,
     TXT("@", "\"v=spf1 include:spf.messagingengine.com ?all\""),
     // Bluesky Settings
     TXT("_atproto.bsky", "\"did=did:plc:ctqbmzjkhqkhpftpm6ajt5hx\""),
+    TXT("_atproto.flashes", "\"did=did:plc:ai44diod3pqkcnyfncqbgqi3\""),
     // Extras
     TXT("pronouns", "\"he/him\"")
 );
