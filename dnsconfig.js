@@ -10,7 +10,7 @@ D("jacobhobbie.com", REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudflare Default TTL
     DefaultTTL("1"),
-    // WWW Redirect
+    // WWW CNAME
     CNAME("www", "jacobhobbie.com.", CF_PROXY_ON),
     // Fastmail Settings
     CNAME("fm1._domainkey", "fm1.jacobhobbie.com.dkim.fmhosted.com."),
@@ -27,10 +27,11 @@ D("jacobhobbie.com", REG_PORKBUN,
 );
 
 D("hobbie.dev", REG_PORKBUN,
-    NAMESERVER('maceio.ns.porkbun.com.'),
-    NAMESERVER('curitiba.ns.porkbun.com.'),
-    NAMESERVER('salvador.ns.porkbun.com.'),
-    NAMESERVER('fortaleza.ns.porkbun.com.')
+    DnsProvider(DNS_CLOUDFLARE),
+    // Cloudlflare Default TTL
+    DefaultTTL("1"),
+    /// Plex CNAME
+    CNAME("plex", "hobbieos-mini.chipmunk-barbel.ts.net.")
 );
 
 D("hobbie.family", REG_PORKBUN,
