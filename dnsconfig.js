@@ -31,7 +31,7 @@ D("hobbie.dev", REG_PORKBUN,
     // Cloudlflare Default TTL
     DefaultTTL("1"),
     /// Plex CNAME
-    CNAME("plex", "hobbieos-mini.chipmunk-barbel.ts.net.")
+    AAAA("plex", "2a01:4ff:1f0:d133::1")
 );
 
 D("hobbie.family", REG_PORKBUN,
