@@ -30,6 +30,7 @@ D("hobbie.dev", REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudlflare Default TTL
     DefaultTTL("1"),
+    /// Plex CNAME
     CNAME("plex", "hobbieos-mini.chipmunk-barbel.ts.net.")
 );
 
