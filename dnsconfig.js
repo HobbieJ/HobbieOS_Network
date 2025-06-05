@@ -30,9 +30,12 @@ D("hobbie.dev", REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudlflare Default TTL
     DefaultTTL("1"),
-    /// Foundry
+    // Homebridge
     A("foundry", "99.125.83.162", CF_PROXY_OFF),
-    AAAA("foundry", "2600:1700:3342:6570:d97b:4b27:957d:80e", CF_PROXY_OFF)
+    AAAA("foundry", "2600:1700:3342:6570:d97b:4b27:957d:80e", CF_PROXY_OFF),
+    /// Foundry
+    A("home", "99.125.83.162", CF_PROXY_OFF),
+    AAAA("home", "2600:1700:3342:6570:d97b:4b27:957d:80e", CF_PROXY_OFF)
 );
 
 D("hobbie.family", REG_PORKBUN,
