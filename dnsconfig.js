@@ -30,7 +30,7 @@ D('hobbie.dev', REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudlflare Default TTL
     DefaultTTL('1'),
-    CNAME('foundry', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com', CF_PROXY_ON)
+    CNAME('foundry', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON)
 );
 
 D('hobbie.family', REG_PORKBUN,
