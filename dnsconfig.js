@@ -13,9 +13,9 @@ D('jacobhobbie.com', REG_PORKBUN,
     // WWW CNAME
     CNAME('www', 'jacobhobbie.com.', CF_PROXY_ON),
     // Fastmail Settings
-    CNAME('fm1._domainkey', 'fm1.jacobhobbie.com.dkim.fmhosted.com.'),
-    CNAME('fm2._domainkey', 'fm2.jacobhobbie.com.dkim.fmhosted.com.'),
-    CNAME('fm3._domainkey', 'fm3.jacobhobbie.com.dkim.fmhosted.com.'),
+    CNAME('fm1._domainkey', 'fm1.jacobhobbie.com.dkim.fmhosted.com.', CF_PROXY_OFF),
+    CNAME('fm2._domainkey', 'fm2.jacobhobbie.com.dkim.fmhosted.com.', CF_PROXY_OFF),
+    CNAME('fm3._domainkey', 'fm3.jacobhobbie.com.dkim.fmhosted.com.', CF_PROXY_OFF),
     MX('@', 10, 'in1-smtp.messagingengine.com.'),
     MX('@', 20, 'in2-smtp.messagingengine.com.'),
     TXT('@', '\"v=spf1 include:spf.messagingengine.com ?all\"'),
