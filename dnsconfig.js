@@ -29,13 +29,7 @@ D("jacobhobbie.com", REG_PORKBUN,
 D("hobbie.dev", REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudlflare Default TTL
-    DefaultTTL("1"),
-    // Foundry
-    A("foundry", "99.125.83.162", CF_PROXY_OFF),
-    AAAA("foundry", "2600:1700:3342:6570:d97b:4b27:957d:80e", CF_PROXY_OFF),
-    // Homebridge
-    A("homebridge", "99.125.83.162", CF_PROXY_OFF),
-    AAAA("homebridge", "2600:1700:3342:6570:d97b:4b27:957d:80e", CF_PROXY_OFF)
+    DefaultTTL("1")
 );
 
 D("hobbie.family", REG_PORKBUN,
