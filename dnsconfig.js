@@ -30,7 +30,13 @@ D('hobbie.dev', REG_PORKBUN,
     DnsProvider(DNS_CLOUDFLARE),
     // Cloudlflare Default TTL
     DefaultTTL('1'),
-    CNAME('foundry', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON)
+    // Cloudflare Hosting
+    // FoundryVTT
+    CNAME('foundry', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON),
+    // Tailscale Hosting
+    // Homebridge
+    A('hb', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('hb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
 );
 
 D('hobbie.family', REG_PORKBUN,
