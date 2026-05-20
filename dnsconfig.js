@@ -23,7 +23,9 @@ D('jacobhobbie.com', REG_PORKBUN,
     TXT('_atproto.bsky', 'did=did:plc:ctqbmzjkhqkhpftpm6ajt5hx'),
     TXT('_atproto.flashes', 'did=did:plc:ai44diod3pqkcnyfncqbgqi3'),
     // Extras
-    TXT('pronouns', 'he/him')
+    TXT('pronouns', 'he/him'),
+    // DMARC
+    TXT('_dmarc', 'v=DMARC1; p=none; rua=mailto:de15e7d057474081b66395c43a9658b4@dmarc-reports.cloudflare.net')
 );
 
 D('hobbie.dev', REG_PORKBUN,
