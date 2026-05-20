@@ -36,7 +36,22 @@ D('hobbie.dev', REG_PORKBUN,
     // Tailscale Hosting
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
-    AAAA('hb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
+    AAAA('hb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // qBittorrent
+    A('qb', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('qb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Prowlarr
+    A('prowlarr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('prowlarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Radarr
+    A('radarr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('radarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Sonarr
+    A('sonarr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('sonarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Bazarr
+    A('bazarr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('bazarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
 );
 
 D('hobbie.family', REG_PORKBUN,
