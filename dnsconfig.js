@@ -35,6 +35,8 @@ D('hobbie.dev', REG_PORKBUN,
     // Cloudflare Hosting
     // FoundryVTT
     CNAME('foundry', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON),
+    // Seerr
+    CNAME('seerr', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON),
     // Tailscale Hosting
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
