@@ -41,6 +41,9 @@ D('hobbie.dev', REG_PORKBUN,
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
     AAAA('hb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // WUD (What's Up Docker)
+    A('wud', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('wud', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
     // qBittorrent
     A('qb', '100.121.229.72', CF_PROXY_OFF),
     AAAA('qb', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
