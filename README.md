@@ -11,6 +11,12 @@ HobbieOS_Network, powered by [DNSControl](https://github.com/StackExchange/dnsco
 * hobbieforhouse.org
 * vortexmanipulators.com
 
+## Automagically Managed
+
+GitHub Actions:
+* Validates all changes and then previews them through various notifications.
+* Automatically publishes any changes made to `main`.
+
 ## Special Thanks To
 
 * [Porkbun](https://porkbun.com/) - For their wonderful API that allows this to work.
