@@ -14,7 +14,7 @@ HobbieOS_Network, powered by [DNSControl](https://github.com/StackExchange/dnsco
 ## Automagically Managed
 
 GitHub Actions:
-* Checks for the changes made (and if they're valid) on tagged Pull Requests to `main`.
+* Validates all changes and then previews them through various notifications.
 * Automatically publishes any changes made to `main`.
 
 ## Special Thanks To
