@@ -10,6 +10,7 @@ HobbieOS_Network, powered by [DNSControl](https://github.com/StackExchange/dnsco
 * thehobbieshop.com
 * hobbieforhouse.org
 * vortexmanipulators.com
+* arenahobbies.com
 
 ## Automagically Managed
 

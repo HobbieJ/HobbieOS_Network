@@ -88,3 +88,9 @@ D('vortexmanipulators.com', REG_PORKBUN,
     NAMESERVER('salvador.ns.porkbun.com.'),
     NAMESERVER('fortaleza.ns.porkbun.com.')
 );
+
+D('arenahobbies.com', REG_PORKBUN,
+    DnsProvider(DNS_CLOUDFLARE),
+    // Cloudlflare Default TTL
+    DefaultTTL('1')
+);
