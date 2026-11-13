@@ -9,15 +9,14 @@ on:
     branches:
       - main
 
-concurrency:
-  group: dns-preview-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
-
 jobs:
   preview:
     if: >-
       contains(github.event.pull_request.labels.*.name, 'DNS Update') &&
       (github.event.action != 'labeled' || github.event.label.name == 'DNS Update')
+    concurrency:
+      group: dns-preview-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     permissions:
       contents: read
       pull-requests: write
