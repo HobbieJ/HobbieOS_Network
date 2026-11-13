@@ -64,6 +64,9 @@ D('hobbie.dev',
     // Tracearr
     A('tracearr', '100.121.229.72', CF_PROXY_OFF),
     AAAA('tracearr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Tautulli
+    A('tautulli', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('tautulli', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
     // Resend SMTP Mail
     // DKIM Verification
     TXT('resend._domainkey.updates', 'p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDR3KSeuE+F0NHJwOuO+63xSZLzMhNTUwcFjmNX/lNgRsFuBVKYHCPp9QtREAgJsIsgmakH80/H/KbFHISoVThuqYtJeANha7ejCuZP89JPRYDmH+vxyErDAaSD6dOrjf4IcYX7cun4Mt4VNJJi7Ie0yNyGKbjQeFojkpCgZTqkbwIDAQAB'),
