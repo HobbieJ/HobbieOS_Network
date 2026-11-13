@@ -58,7 +58,10 @@ D('hobbie.dev', REG_PORKBUN,
     AAAA('sonarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
     // Bazarr
     A('bazarr', '100.121.229.72', CF_PROXY_OFF),
-    AAAA('bazarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
+    AAAA('bazarr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Tracearr
+    A('tracearr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('tracearr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
 );
 
 D('hobbie.family', REG_PORKBUN,
