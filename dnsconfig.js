@@ -68,8 +68,8 @@ D('hobbie.dev',
     // DKIM Verification
     TXT('resend._domainkey.updates', 'p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDR3KSeuE+F0NHJwOuO+63xSZLzMhNTUwcFjmNX/lNgRsFuBVKYHCPp9QtREAgJsIsgmakH80/H/KbFHISoVThuqYtJeANha7ejCuZP89JPRYDmH+vxyErDAaSD6dOrjf4IcYX7cun4Mt4VNJJi7Ie0yNyGKbjQeFojkpCgZTqkbwIDAQAB'),
     // Enable Sending
-    CNAME('rsend.updates', 'rsend.forge.rmta.net', CF_PROXY_OFF),
-    CNAME('send.updates', 'send.forge.rmta.net', CF_PROXY_OFF),
+    CNAME('rsend.updates', 'rsend.forge.rmta.net.', CF_PROXY_OFF),
+    CNAME('send.updates', 'send.forge.rmta.net.', CF_PROXY_OFF),
     // DMARC
     TXT('_dmarc', 'v=DMARC1; p=none;')
 );
