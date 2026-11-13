@@ -1,13 +1,9 @@
 // @ts-check
 /// <reference path='types-dnscontrol.d.ts' />
 
-var REG_PORKBUN = NewRegistrar('porkbun');
-var REG_NONE = NewRegistrar('none');
-var DNS_PORKBUN = NewDnsProvider('porkbun');
-var DNS_CLOUDFLARE = NewDnsProvider('cloudflare');
-
-D('jacobhobbie.com', REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE),
+D('jacobhobbie.com',
+    REGISTRAR('porkbun'),
+    SERVICE('cloudflare'),
     // Cloudflare Default TTL
     DefaultTTL('1'),
     // WWW CNAME
@@ -28,8 +24,9 @@ D('jacobhobbie.com', REG_PORKBUN,
     TXT('_dmarc', 'v=DMARC1; p=none; rua=mailto:de15e7d057474081b66395c43a9658b4@dmarc-reports.cloudflare.net')
 );
 
-D('hobbie.dev', REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE),
+D('hobbie.dev',
+    REGISTRAR('porkbun'),
+    SERVICE('cloudflare', ALL_NS, { manage_single_redirects: true}),
     // Cloudlflare Default TTL
     DefaultTTL('1'),
     // Cloudflare Hosting
@@ -38,6 +35,10 @@ D('hobbie.dev', REG_PORKBUN,
     // Seerr
     CNAME('seerr', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON),
     CNAME('request', '15eb63ed-beec-4278-a9c0-bce0165b82ef.cfargotunnel.com.', CF_PROXY_ON),
+    // Redirect `request` to `seerr`
+    CF_SINGLE_REDIRECT('request-to-seerr', 301,
+    'http.host eq "request.hobbie.dev"',
+    'concat("https://seerr.hobbie.dev", http.request.uri.path)'),
     // Tailscale Hosting
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
@@ -65,36 +66,41 @@ D('hobbie.dev', REG_PORKBUN,
     AAAA('tracearr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF)
 );
 
-D('hobbie.family', REG_PORKBUN,
+D('hobbie.family',
+    REGISTRAR('porkbun'),
     NAMESERVER('maceio.ns.porkbun.com.'),
     NAMESERVER('curitiba.ns.porkbun.com.'),
     NAMESERVER('salvador.ns.porkbun.com.'),
     NAMESERVER('fortaleza.ns.porkbun.com.')
 );
 
-D('thehobbieshop.com', REG_PORKBUN,
+D('thehobbieshop.com',
+    REGISTRAR('porkbun'),
     NAMESERVER('maceio.ns.porkbun.com.'),
     NAMESERVER('curitiba.ns.porkbun.com.'),
     NAMESERVER('salvador.ns.porkbun.com.'),
     NAMESERVER('fortaleza.ns.porkbun.com.')
 );
 
-D('hobbieforhouse.org', REG_PORKBUN,
+D('hobbieforhouse.org',
+    REGISTRAR('porkbun'),
     NAMESERVER('maceio.ns.porkbun.com.'),
     NAMESERVER('curitiba.ns.porkbun.com.'),
     NAMESERVER('salvador.ns.porkbun.com.'),
     NAMESERVER('fortaleza.ns.porkbun.com.')
 );
 
-D('vortexmanipulators.com', REG_PORKBUN,
+D('vortexmanipulators.com',
+    REGISTRAR('porkbun'),
     NAMESERVER('maceio.ns.porkbun.com.'),
     NAMESERVER('curitiba.ns.porkbun.com.'),
     NAMESERVER('salvador.ns.porkbun.com.'),
     NAMESERVER('fortaleza.ns.porkbun.com.')
 );
 
-D('arenahobbies.com', REG_PORKBUN,
-    DnsProvider(DNS_CLOUDFLARE),
+D('arenahobbies.com',
+    REGISTRAR('porkbun'),
+    SERVICE('cloudflare'),
     // Cloudlflare Default TTL
     DefaultTTL('1')
 );
