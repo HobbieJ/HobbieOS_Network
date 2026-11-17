@@ -64,6 +64,9 @@ D('hobbie.dev',
     // Tracearr
     A('tracearr', '100.121.229.72', CF_PROXY_OFF),
     AAAA('tracearr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
+    // Maintainerr
+    A('maintainerr', '100.121.229.72', CF_PROXY_OFF),
+    AAAA('maintainerr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
     // Tautulli
     A('tautulli', '100.121.229.72', CF_PROXY_OFF),
     AAAA('tautulli', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
