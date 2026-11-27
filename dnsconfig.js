@@ -39,6 +39,10 @@ D('hobbie.dev',
     CF_SINGLE_REDIRECT('request-to-seerr', 301,
     'http.host eq "request.hobbie.dev"',
     'concat("https://seerr.hobbie.dev", http.request.uri.path)'),
+    // Pangolin Hosting
+    // Audiobookshelf
+    A('audiobooks', '100.102.166.65', CF_PROXY_OFF),
+    AAAA('audiobooks', 'fd7a:115c:a1e0::7e29:a642', CF_PROXY_OFF),
     // Tailscale Hosting
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
@@ -67,9 +71,6 @@ D('hobbie.dev',
     // Maintainerr
     A('maintainerr', '100.121.229.72', CF_PROXY_OFF),
     AAAA('maintainerr', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
-    // Tautulli
-    // A('tautulli', '100.121.229.72', CF_PROXY_OFF),
-    // AAAA('tautulli', 'fd7a:115c:a1e0::d901:e548', CF_PROXY_OFF),
     // Resend SMTP Mail
     // DKIM Verification
     TXT('resend._domainkey.updates', 'p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDR3KSeuE+F0NHJwOuO+63xSZLzMhNTUwcFjmNX/lNgRsFuBVKYHCPp9QtREAgJsIsgmakH80/H/KbFHISoVThuqYtJeANha7ejCuZP89JPRYDmH+vxyErDAaSD6dOrjf4IcYX7cun4Mt4VNJJi7Ie0yNyGKbjQeFojkpCgZTqkbwIDAQAB'),
