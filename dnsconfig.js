@@ -40,9 +40,12 @@ D('hobbie.dev',
     'http.host eq "request.hobbie.dev"',
     'concat("https://seerr.hobbie.dev", http.request.uri.path)'),
     // Pangolin Hosting
+    // Pangolin Dashboard
+    A('secure', '138.68.224.164', CF_PROXY_OFF),
+    AAAA('secure', '2604:a880:2:d1:0:1:d941:3001', CF_PROXY_OFF),
     // Audiobookshelf
-    A('audiobooks', '100.102.166.65', CF_PROXY_OFF),
-    AAAA('audiobooks', 'fd7a:115c:a1e0::7e29:a642', CF_PROXY_OFF),
+    A('audiobooks', '138.68.224.164', CF_PROXY_OFF),
+    AAAA('audiobooks', '2604:a880:2:d1:0:1:d941:3001', CF_PROXY_OFF),
     // Tailscale Hosting
     // Homebridge
     A('hb', '100.121.229.72', CF_PROXY_OFF),
